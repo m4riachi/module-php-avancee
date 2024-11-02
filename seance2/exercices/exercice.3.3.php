@@ -29,6 +29,7 @@ trait TraitB {
 
 class MonObjet {
     use TraitA, TraitB {
+        TraitA::afficher insteadof TraitB;
         TraitA::afficher as afficherA;
         TraitB::afficher as afficherB;
     }
