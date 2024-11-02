@@ -17,37 +17,40 @@
 */
 
 trait Logger {
-    public function logInfo($message): void
-    {
-        echo "INFO: $message\n";
+    public function logInfo($message) {
+        echo "INFO: " . $message . "\n";
     }
 
-    public function logError($message): void
-    {
-        echo "ERROR: $message\n";
+    public function logError($message) {
+        echo "ERROR: " . $message . "\n";
     }
 }
 
 class FichierLogger {
     use Logger;
 
-    public function enregistrerDansFichier($message): void
-    {
-        echo $this->logError("Enregistrement dans le fichier: $message");
+    public function enregistrerDansFichier($message) {
+        echo "Écriture dans le fichier: " . $message . "\n";
     }
 }
 
 class ConsoleLogger {
     use Logger;
 
-    public function enregistrerDansConsole($message): void
-    {
-        echo $this->logInfo("Enregistrement dans la console: $message");
+    public function enregistrerDansConsole($message) {
+        echo "Affichage console: " . $message . "\n";
     }
 }
 
 $fichierLogger = new FichierLogger();
-$fichierLogger->enregistrerDansFichier("Message d'erreur");
-
 $consoleLogger = new ConsoleLogger();
-$consoleLogger->enregistrerDansConsole("Message d'information");
+
+$fichierLogger->logInfo("Test message d'information fichier");
+$fichierLogger->enregistrerDansFichier("Message spécifique fichier");
+$fichierLogger->logError("Erreur d'ouverture du fichier");
+
+echo "\n";
+
+$consoleLogger->logInfo("Test message d'information console");
+$consoleLogger->enregistrerDansConsole("Message spécifique console");
+$consoleLogger->logError("Erreur d'affichage console");

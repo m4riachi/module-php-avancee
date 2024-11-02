@@ -31,5 +31,5 @@ class Notification {
 }
 
 $notification = new Notification();
-$notification->envoyerEmail("[email protected]", "Bonjour");
+$notification->envoyerEmail("email@gmail.com", "Bonjour");
 $notification->envoyerSms("0601020304", "Salut");
