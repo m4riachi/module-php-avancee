@@ -33,7 +33,7 @@ class Api implements Connectable {
 
 $connectables = [
     new BaseDeDonnees(),
-    new Api()
+    new Api(),
 ];
 foreach ($connectables as $connectable) {
     $connectable->connecter();
