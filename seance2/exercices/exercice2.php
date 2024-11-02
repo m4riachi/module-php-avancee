@@ -17,7 +17,7 @@ interface Identifiable {
 }
 
 class Produit {
-    public int $id;
+    protected int $id;
 
     public function __construct(int $id)
     {

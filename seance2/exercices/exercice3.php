@@ -9,7 +9,7 @@
     3. Créez des instances de `Chien` et `Chat`, et appelez `parler()` sur chaque instance.
 */
 
-class Animal {
+abstract class Animal {
     public function parler(): void
     {
         echo "L'animal parle\n";
