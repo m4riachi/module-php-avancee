@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -130,3 +131,10 @@ Route::prefix('admin')->group(function () {
 Route::fallback(function () {
     return "Page non trouvée";
 });
+
+Route::get('/accueil/{message}', function ($message) {
+    // return response("Bienvenue sur mon site", 200);
+    return view('accueil', compact('message'));
+})->name('accueil');
+
+Route::resource('articles', ArticleController::class);
